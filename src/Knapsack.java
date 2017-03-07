@@ -14,6 +14,6 @@ public class Knapsack {
 
     //Solution using price/weight density
     public static void solveGreedily(int[] profit, int[] weight, int capacity){
-        System.out.println(GreedyKnapsack.knapsack(knapsack(profit,weight,capacity)));
+        System.out.println(GreedyKnapsack.knapsack(profit,weight,capacity));
     }
 }
