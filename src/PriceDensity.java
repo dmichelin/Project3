@@ -24,7 +24,8 @@ public class PriceDensity implements Comparable<PriceDensity> {
     }
 
     public PriceDensity(int price, int weight, int p){
-        if (weight ==0) density = 0;
+        // Avoid divide by zero errors
+        if (weight ==0) density = Integer.MAX_VALUE;
         else density = price/weight;
         this.weight = weight;
         this.price = price;

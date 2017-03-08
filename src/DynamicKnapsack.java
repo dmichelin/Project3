@@ -7,8 +7,12 @@ public class DynamicKnapsack {
     private static int[] profit;
     private static int[] weight;
     private static int numObjects;
+    private static boolean timing = true;
+    private static long startime;
 
     static void knapsack(int[]theProfit, int[] theWeight,int theCapacity){
+        if(timing) startime = System.nanoTime();
+
         profit = theProfit;
         weight=theWeight;
 
@@ -20,6 +24,9 @@ public class DynamicKnapsack {
             }
         }
         System.out.println(fill(0,theCapacity));
+        if(timing) {
+            Logger.log("Dynamic_time.txt",(System.nanoTime() - startime)+"");
+        }
         //traceback(fArray,weight,theCapacity,new int[numObjects+1]);
 
     }

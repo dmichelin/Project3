@@ -6,7 +6,11 @@ import java.util.List;
  */
 public class GreedyKnapsack {
 
+    private static boolean timing = true;
+    private static long startime;
+
     public static int knapsack(int[] profit,int[] weight,int capacity){
+        if(timing) startime = System.nanoTime();
         int priceToReturn = 0;
         // Create the price/density array
         List<Comparable> dArray = createDensityArray(profit,weight);
@@ -21,6 +25,9 @@ public class GreedyKnapsack {
                 priceToReturn+=priceDensity.getPrice();
                 capacity=capacity-priceDensity.getWeight();
             } else break;
+        }
+        if(timing) {
+            Logger.log("Greedy_time.txt",(System.nanoTime() - startime)+"");
         }
 
         return priceToReturn;
