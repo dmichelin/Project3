@@ -19,8 +19,8 @@ public class DynamicKnapsack {
                 fArray[i][j]=-1;
             }
         }
-        System.out.println(fill(1,theCapacity));
-        traceback(fArray,weight,theCapacity,new int[numObjects+1]);
+        System.out.println(fill(0,theCapacity));
+        //traceback(fArray,weight,theCapacity,new int[numObjects+1]);
 
     }
 

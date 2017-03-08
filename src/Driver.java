@@ -3,8 +3,8 @@
  */
 public class Driver {
     public static void main(String[] args){
-        int[] weights = new int[]{0,20,15,15};
-        int[] profit = new int[]{0,40,25,25};
+        int[] weights = new int[]{20,15,15};
+        int[] profit = new int[]{40,25,25};
         int n = 40;
 
         System.out.print("Bruteforce :");

@@ -6,8 +6,8 @@ import java.util.List;
  */
 public class GreedyKnapsack {
 
-    public static List knapsack(int[] profit,int[] weight,int capacity){
-        List listToReturn = new ArrayList();
+    public static int knapsack(int[] profit,int[] weight,int capacity){
+        int priceToReturn = 0;
         // Create the price/density array
         List<Comparable> dArray = createDensityArray(profit,weight);
 
@@ -18,12 +18,12 @@ public class GreedyKnapsack {
         for(int i = dArray.size()-1;i >=0;i--){
             PriceDensity priceDensity =(PriceDensity) dArray.get(i);
             if(capacity >= priceDensity.getWeight()){
-                listToReturn.add(priceDensity.getPos());
+                priceToReturn+=priceDensity.getPrice();
                 capacity=capacity-priceDensity.getWeight();
             } else break;
         }
 
-        return listToReturn;
+        return priceToReturn;
     }
 
     private static List<Comparable> createDensityArray(int[] profit, int[] weight){
